@@ -25,6 +25,7 @@ SNIPPET_CONTENT=$(cat "$SNIPPET_FILE")
 
 # Check if the snippet content already exists in the target HTML file
 if ! grep -Fq "$SNIPPET_CONTENT" "$TARGET_HTML_FILE"; then
+    echo "aaaa"
     # Read the snippet file and escape newlines for sed
     ESCAPED_SNIPPET_CONTENT=$(sed 's/$/\\/' "$SNIPPET_FILE")
 
@@ -34,7 +35,7 @@ if ! grep -Fq "$SNIPPET_CONTENT" "$TARGET_HTML_FILE"; then
     " "$TARGET_HTML_FILE"
 fi
 
-# -------------------- autocommit changes -------------------------------
+-------------------- autocommit changes -------------------------------
 
 # Add all changes
 git add .
