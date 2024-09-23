@@ -29,12 +29,15 @@ sed -i '' '/<meta property="og:url" content="index.html">/d' "$TARGET_HTML_FILE"
 sed -i '' '/<meta property="og:image" content="images\/nicolas_profile_picture.jpg">/d' "$TARGET_HTML_FILE"
 sed -i '' '/<meta property="og:site_name" content="nicolasassi.com">/d' "$TARGET_HTML_FILE"
 
+# Remove <link> tag regardless of its position on a line
+sed -i '' 's|<link rel="icon" href="site-lib/media/favicon.png">||g' "$TARGET_HTML_FILE"
+
+
 # Store the content of the snippet in a variable
 SNIPPET_CONTENT=$(cat "$SNIPPET_FILE")
 
 # Check if the snippet content already exists in the target HTML file
 if ! grep -Fq "$SNIPPET_CONTENT" "$TARGET_HTML_FILE"; then
-    echo "aaaa"
     # Read the snippet file and escape newlines for sed
     ESCAPED_SNIPPET_CONTENT=$(sed 's/$/\\/' "$SNIPPET_FILE")
 
