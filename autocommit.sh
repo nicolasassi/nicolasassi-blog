@@ -28,7 +28,6 @@ sed -i '' '/<meta property="og:type" content="website">/d' "$TARGET_HTML_FILE"
 sed -i '' '/<meta property="og:url" content="index.html">/d' "$TARGET_HTML_FILE"
 sed -i '' '/<meta property="og:image" content="images\/nicolas_profile_picture.jpg">/d' "$TARGET_HTML_FILE"
 sed -i '' '/<meta property="og:site_name" content="nicolasassi.com">/d' "$TARGET_HTML_FILE"
-sed -i '' '/<link rel="icon" href="site-lib\/media\/favicon.png">/d' "$TARGET_HTML_FILE"
 
 # Store the content of the snippet in a variable
 SNIPPET_CONTENT=$(cat "$SNIPPET_FILE")
