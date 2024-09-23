@@ -18,10 +18,14 @@ if [ ! -f "$TARGET_HTML_FILE" ]; then
     exit 1
 fi
 
+# Read the content of the snippet file and escape newlines for sed
+SNIPPET_CONTENT=$(sed 's/$/\\/' "$SNIPPET_FILE")
+
 # Append the snippet before the closing </head> tag of the target HTML file
 sed -i '' "/<\/head>/i\\
-$(cat "$SNIPPET_FILE")
+$SNIPPET_CONTENT
 " "$TARGET_HTML_FILE"
+
 
 # Add all changes
 git add .
