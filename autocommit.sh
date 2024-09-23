@@ -18,16 +18,10 @@ if [ ! -f "$TARGET_HTML_FILE" ]; then
     exit 1
 fi
 
-# Backup the target HTML file
-cp "$TARGET_HTML_FILE" "$TARGET_HTML_FILE.bak"
-
 # Append the snippet before the closing </head> tag of the target HTML file
 sed -i '' "/<\/head>/i\\
 $(cat "$SNIPPET_FILE")
 " "$TARGET_HTML_FILE"
-
-echo "Snippet from '$SNIPPET_FILE' added to the end of the <head> tag in '$TARGET_HTML_FILE'."
-
 
 # Add all changes
 git add .
