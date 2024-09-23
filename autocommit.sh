@@ -21,7 +21,6 @@ if [ ! -f "$TARGET_HTML_FILE" ]; then
 fi
 
 # Remove specific meta and link tags from the target HTML file
-sed -i '' '/<title>index</title>/d' "$TARGET_HTML_FILE"
 sed -i '' '/<meta name="description" content="nicolasassi.com - index">/d' "$TARGET_HTML_FILE"
 sed -i '' '/<meta property="og:title" content="index">/d' "$TARGET_HTML_FILE"
 sed -i '' '/<meta property="og:description" content="nicolasassi.com - index">/d' "$TARGET_HTML_FILE"
@@ -32,6 +31,7 @@ sed -i '' '/<meta property="og:site_name" content="nicolasassi.com">/d' "$TARGET
 
 # Remove <link> tag regardless of its position on a line
 sed -i '' 's|<link rel="icon" href="site-lib/media/favicon.png">||g' "$TARGET_HTML_FILE"
+sed -i '' 's|<title>index</title>||g' "$TARGET_HTML_FILE"
 
 
 # Store the content of the snippet in a variable
