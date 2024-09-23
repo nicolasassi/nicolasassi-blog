@@ -24,7 +24,7 @@ fi
 SNIPPET_CONTENT=$(cat "$SNIPPET_FILE")
 
 # Check if the snippet content already exists in the target HTML file
-if [! grep -Fq "$SNIPPET_CONTENT" "$TARGET_HTML_FILE"]; then
+if ! grep -Fq "$SNIPPET_CONTENT" "$TARGET_HTML_FILE"; then
     # Read the snippet file and escape newlines for sed
     ESCAPED_SNIPPET_CONTENT=$(sed 's/$/\\/' "$SNIPPET_FILE")
 
