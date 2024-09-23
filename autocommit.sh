@@ -35,7 +35,7 @@ if ! grep -Fq "$SNIPPET_CONTENT" "$TARGET_HTML_FILE"; then
     " "$TARGET_HTML_FILE"
 fi
 
--------------------- autocommit changes -------------------------------
+# -------------------- autocommit changes -------------------------------
 
 # Add all changes
 git add .
