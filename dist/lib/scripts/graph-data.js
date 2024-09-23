@@ -1,1 +1,0 @@
-let graphData={graphOptions:{attractionForce:1,linkLength:10,repulsionForce:150,centralForce:3,edgePruning:100,minNodeRadius:3,maxNodeRadius:7},isInitialized:!0,paths:["botânica/botânica.html","index.html"],nodeCount:2,linkSources:[],linkTargets:[],labels:["botânica","index"],radii:[null,null],linkCount:0}
